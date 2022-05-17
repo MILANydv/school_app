@@ -19,7 +19,18 @@ class HomePage extends StatelessWidget {
             crossAxisSpacing: 10,
           ),
           itemBuilder: (context, index) {
-            return ElevatedButton(onPressed: () {}, child: Text('$index'));
+            return ElevatedButton(
+                onPressed: () {
+                  if (index == 0) {
+                    Navigator.pushNamed(context, '/');
+                  } else {
+                    Navigator.pushNamed(context, '/signup');
+                  }
+                },
+                child: Text(
+                  index == 0 ? 'View Student' : 'Search Student',
+                  style: const TextStyle(fontSize: 20),
+                ));
           },
         ),
       ),
